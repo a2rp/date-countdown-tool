@@ -20,7 +20,11 @@ export const getEventPreset = (preset, now = new Date()) => {
     return { name: "New Year", dateTime: dateToLocalInput(target) };
   }
   if (preset === "month") {
+    const dayOfMonth = target.getDate();
+    target.setDate(1);
     target.setMonth(target.getMonth() + 1);
+    const lastDay = new Date(target.getFullYear(), target.getMonth() + 1, 0).getDate();
+    target.setDate(Math.min(dayOfMonth, lastDay));
     return { name: "One month from now", dateTime: dateToLocalInput(target) };
   }
   throw new Error("Choose a supported date preset.");

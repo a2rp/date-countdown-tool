@@ -32,9 +32,11 @@ test("provides useful local date presets", () => {
   const tomorrow = getEventPreset("tomorrow", now);
   const newYear = getEventPreset("newYear", now);
   const month = getEventPreset("month", now);
+  const monthEnd = getEventPreset("month", new Date(2026, 0, 31, 12, 30));
   assert.equal(tomorrow.name, "Tomorrow morning");
   assert.match(tomorrow.dateTime, /T09:00$/);
   assert.equal(new Date(newYear.dateTime).getMonth(), 0);
   assert.equal(new Date(month.dateTime).getMonth(), 7);
+  assert.equal(new Date(monthEnd.dateTime).getDate(), 28);
   assert.equal(eventLimit, 20);
 });
