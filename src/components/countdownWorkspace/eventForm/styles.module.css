@@ -1,0 +1,27 @@
+﻿.form {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--paper);
+  box-shadow: 0 9px 30px rgb(17 28 44 / 5%);
+
+  .heading { display: flex; align-items: center; gap: 9px; margin-bottom: 19px; }
+  .icon { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid #c9e6e1; border-radius: 9px; color: var(--green); background: #eaf6f3; }
+  .icon svg { width: 15px; height: 15px; }
+  h2 { color: var(--ink); font-size: 15px; font-weight: 760; letter-spacing: -0.035em; }
+  .heading p { margin-top: 2px; color: var(--muted); font-size: 9px; }
+  label { display: block; margin: 12px 0 5px; color: var(--ink-soft); font-size: 9px; font-weight: 720; }
+  input { width: 100%; min-height: 37px; padding: 0 9px; border: 1px solid var(--line-strong); border-radius: 7px; color: var(--ink); background: #fff; font-size: 9px; }
+  input:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+  input:disabled { opacity: 0.55; }
+  .timeNote { margin-top: 5px; color: var(--muted); font-size: 8px; }
+  .presets { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+  .presets button { min-height: 26px; padding: 0 7px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-soft); background: var(--surface); font-size: 8px; transition: border-color 150ms ease, box-shadow 150ms ease; }
+  .presets button:hover:not(:disabled) { border-color: var(--green); box-shadow: 0 0 0 2px rgb(78 199 191 / 12%); }
+  .presets button:disabled { opacity: 0.5; }
+  .error { margin-top: 9px; color: #9d493d; font-size: 9px; }
+  .submitButton { display: flex; width: 100%; min-height: 40px; align-items: center; justify-content: center; gap: 7px; margin-top: 15px; border: 1px solid var(--ink); border-radius: 8px; color: #fff; background: var(--ink); font-size: 9px; font-weight: 740; transition: border-color 150ms ease, box-shadow 150ms ease; }
+  .submitButton svg { width: 13px; height: 13px; color: var(--accent); }
+  .submitButton:hover:not(:disabled) { border-color: var(--green); box-shadow: 0 0 0 3px rgb(78 199 191 / 13%); }
+  .submitButton:disabled { opacity: 0.5; }
+}
