@@ -1,0 +1,24 @@
+﻿.overlay {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgb(16 28 44 / 58%);
+  backdrop-filter: blur(3px);
+
+  .dialog { width: min(100%, 400px); padding: 23px; border: 1px solid var(--line); border-radius: 13px; background: var(--paper); box-shadow: 0 25px 90px rgb(8 20 32 / 27%); }
+  .icon { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 10px; color: #9f4b3f; background: #f8ebe7; }
+  .icon svg { width: 16px; height: 16px; }
+  h2 { margin-top: 14px; color: var(--ink); font-size: 18px; font-weight: 760; letter-spacing: -0.04em; }
+  p { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.65; }
+  p b { color: var(--ink); }
+  .actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 19px; }
+  button { min-height: 36px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 7px; color: var(--ink); background: var(--paper); font-size: 9px; font-weight: 720; transition: border-color 150ms ease, box-shadow 150ms ease; }
+  button:hover { border-color: var(--green); box-shadow: 0 0 0 3px rgb(78 199 191 / 11%); }
+  button:last-child { border-color: #a64e40; color: white; background: #a64e40; }
+  button:last-child:hover { border-color: #80392e; box-shadow: 0 0 0 3px rgb(166 78 64 / 15%); }
+
+  @media (max-width: 410px) { .actions { flex-direction: column-reverse; } .actions button { width: 100%; } }
+}
