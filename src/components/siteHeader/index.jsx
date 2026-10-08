@@ -9,8 +9,8 @@ const SiteHeader = () => (
         <span>Date <b>Countdown</b></span>
       </a>
       <nav className={styles.navigation} aria-label="Main navigation">
-        <a href="#countdowns">Generator</a>
-        <a href="#about">About UUIDs</a>
+        <a href="#countdowns">Countdowns</a>
+        <a href="#about">How it works</a>
       </nav>
       <a className={styles.repository} href="https://github.com/a2rp/date-countdown-tool" target="_blank" rel="noreferrer">
         <FiGithub aria-hidden="true" /> <span>Repository</span>
