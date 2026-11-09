@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { FiCalendar, FiClock } from "react-icons/fi";
 import DeleteEventConfirm from "./deleteEventConfirm/index.jsx";
 import EventCard from "./eventCard/index.jsx";
@@ -24,6 +24,7 @@ const CountdownWorkspace = () => {
   const [now, setNow] = useState(() => Date.now());
   const [notice, setNotice] = useState("");
   const [storageError, setStorageError] = useState("");
+  const cancelDelete = useCallback(() => setPendingDelete(null), []);
   const sortedEvents = sortEvents(events, now);
   const selectedEvent = events.find((event) => event.id === selectedId) ?? sortedEvents[0] ?? null;
   const selectedDifference = selectedEvent ? getTimeDifference(selectedEvent.dateTime, now) : null;
@@ -94,7 +95,7 @@ const CountdownWorkspace = () => {
         </div>
       </div>
       <p className={styles.limitNote}>One-second updates <span /> Up to {eventLimit} saved events <span /> Stored locally</p>
-      {pendingDelete && <DeleteEventConfirm event={pendingDelete} onCancel={() => setPendingDelete(null)} onConfirm={removeEvent} />}
+      {pendingDelete && <DeleteEventConfirm event={pendingDelete} onCancel={cancelDelete} onConfirm={removeEvent} />}
     </section>
   );
 };
